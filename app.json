@@ -1,0 +1,11 @@
+{
+  "name": "RailOverflow",
+  "description": "A self-hosted StackOverflow clone built with Ruby",
+  "repository": "https://github.com/RailRunner166/rail-overflow",
+  "keywords": ["ruby", "forum", "rails"],
+  "addons": [
+    {
+      "plan": "heroku-postgresql"
+    }
+  ]
+}

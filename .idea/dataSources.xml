@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails StackExchangeClone: development" uuid="8a9f514d-ca30-42cb-9733-2d32f4a13f44">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/railoverflow_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails StackExchangeClone: test" uuid="adc41eea-9f02-41ae-a89e-f86a6577202a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/railoverflow_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails StackExchangeClone: production" uuid="3be6e21a-fae3-406f-b3f9-08ab54fcc7b0">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/railoverflow_production</jdbc-url>
+    </data-source>
+  </component>
+</project>
