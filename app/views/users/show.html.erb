@@ -1,0 +1,34 @@
+<div class='ui vertical masthead segment'>
+    <div class='ui container'>
+        <h1 class='ui header'>
+            <img class='ui circular image' src="https://this-is-why.nobody-loves.me/i/vfvakc3r.jpg">
+            <div class='content'>
+                <%= @user.username %>
+                <div class='sub header'>
+                    <% if @user.bio %>
+                        <p><%= @user.bio %></p>
+                    <% else %>
+                        <strong>This user has not written a bio.</strong>
+                    <% end %>
+                </div>
+            </div>
+        </h1>
+    </div>
+</div>
+
+<div class='ui vertical stripe segment'>
+    <div class='ui grid container'>
+        <div class='eight wide computer sixteen wide mobile column'>
+            <div class='ui comments'>
+                <h2 class='ui dividing header'>Questions</h2>
+                <%= render @user.questions %>
+            </div>
+        </div>
+        <div class='eight wide computer sixteen wide mobile column'>
+            <div class='ui comments'>
+                <h2 class='ui dividing header'>Answers</h2>
+                <%= render @user.answers %>
+            </div>
+        </div>
+    </div>
+</div>

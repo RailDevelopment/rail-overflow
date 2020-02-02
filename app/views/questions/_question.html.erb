@@ -1,0 +1,23 @@
+<div class='comment'>
+    <a class='avatar' href='<%= user_path(question.user) %>'>
+        <img src='https://this-is-why.nobody-loves.me/i/vfvakc3r.jpg'>
+    </a>
+    <div class='content'>
+        <%= link_to question.title, question_path(question), class: 'author' %>
+        <div class='metadata'>
+            <% if question.solved %>
+                <span class='solved' data-tooltip='This question has been solved.' data-inverted><i class='green checkmark icon'></i></span>
+            <% end %>
+            <span class='date'><%= time_ago_in_words(question.created_at) %></span>
+        </div>
+        <div class='text'>
+            <%= question.text.truncate(150) %>
+        </div>
+        <div class='actions'>
+            <% if current_user and question.user.id == current_user.id %>
+                <%= link_to 'Edit', edit_question_path(question) %>
+                <%= link_to 'Delete', question_path(question), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+        </div>
+    </div>
+</div>

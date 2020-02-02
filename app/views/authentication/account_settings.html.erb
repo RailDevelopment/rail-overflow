@@ -1,0 +1,27 @@
+<div class='ui container'>
+    <h1 class='ui dividing header'>Account Settings</h1>
+    <strong>Leave any field unchanged if you do not plan on changing it.</strong>
+    <%= form_for @user, :as => :user, :url => account_settings_path, :method => :put, :html => {class: 'ui form'} do |f| %>
+        <div class='field'>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+        </div>
+        <div class='field'>
+            <%= f.label :username %>
+            <%= f.text_field :username %>
+        </div>
+        <div class='field'>
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+        </div>
+        <div class='field'>
+            <%= f.label :new_password %>
+            <%= f.password_field :new_password %>
+        </div>
+        <div class='field'>
+            <%= f.label :new_password_confirmation %>
+            <%= f.password_field :new_password_confirmation %>
+        </div>
+        <%= f.submit 'Update', class: 'ui blue submit button' %>
+    <% end %>
+</div>

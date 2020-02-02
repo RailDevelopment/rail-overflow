@@ -1,0 +1,11 @@
+<div class='ui vertical stripe segment'>
+    <div class='ui container'>
+		<div class='ui comments'>
+			<h1 class='ui dividing header'>
+				Questions
+				<%= link_to 'Ask your Question!', new_question_path, class: 'ui positive circular right floated button' %>
+			</h1>
+			<%= render @questions %>
+		</div>
+	</div>
+</div>

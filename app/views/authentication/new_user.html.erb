@@ -1,0 +1,24 @@
+<div class='ui vertical stripe segment'>
+    <div class='ui container'>
+		<h1 class='ui dividing header'>Sign Up</h1>
+		<%= form_for @user, :as => :user, :url => new_user_path, :method => :post, :html => {class: 'ui form'} do |f| %>
+			<div class='field'>
+				<%= f.label :username %>
+				<%= f.text_field :username %>
+			</div>
+			<div class='field'>
+				<%= f.label :email %>
+				<%= f.text_field :email %>
+			</div>
+			<div class='field'>
+				<%= f.label :password %>
+				<%= f.password_field :password %>
+			</div>
+			<div class='field'>
+				<%= f.label :password_confirmation %>
+				<%= f.password_field :password_confirmation %>
+			</div>
+			<%= f.submit 'Sign Up', class: 'ui blue submit button' %>
+		<% end %>
+	</div>
+</div>

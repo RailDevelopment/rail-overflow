@@ -1,0 +1,30 @@
+<%= form_with model: @question, local: true, html: {class: 'ui form'} do |form| %>
+	<% if @question.errors.any? %>
+
+		<div class='ui red icon message'>
+			<i class='exclamation icon'></i>
+			<div class='content'>
+				<div class='header'>
+					<%= pluralize(@question.errors.count, 'error') %> prohibited this question from being saved:
+				</div>
+				<ul class='list'>
+					<% @question.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	<% end %>
+ 
+	<div class='field'>
+		<%= form.label :title %>
+		<%= form.text_field :title %>
+	</div>
+ 
+	<div class='field'>
+		<%= form.label :text %>
+		<%= form.text_area :text %>
+	</div>
+ 
+	<%= form.submit 'Save Question', class: 'ui blue submit button' %>
+<% end %>

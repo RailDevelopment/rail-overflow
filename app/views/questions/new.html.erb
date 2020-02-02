@@ -1,0 +1,16 @@
+<div class='ui vertical stripe segment'>
+    <div class='ui container'>
+        <% if not current_user %>
+            <div class='ui yellow icon message'>
+                <i class='exclamation triangle icon'></i>
+                <div class='content'>
+                    <div class='header'>You need an account to do this!</div>
+                    <p>You must have an account to post a question. You can continue to type here, but you won't be able to post it until you either <%= link_to 'sign up', new_user_path %> or <%= link_to 'log in', sign_in_path %>.</p>
+                </div>
+            </div>
+        <% end %>
+        <h1>Ask a Question:</h1>
+
+        <%= render 'form' %>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class='ui vertical stripe segment'>
+    <div class='ui container'>
+        <%= form_for @user, :as => :user, :url => sign_in_path(@user), :html => {class: 'ui form'} do |f| %>
+            <div class='field'>
+                <%= f.label :email %>
+                <%= f.text_field :email %>
+            </div>
+            <div class='field'>
+                <%= f.label :password %>
+                <%= f.password_field :password %>
+            </div>
+            <%= f.submit 'Sign In', class: 'ui blue submit button' %>
+        <% end %>
+    </div>
+</div>
