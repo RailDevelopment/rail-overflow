@@ -4,15 +4,12 @@ class Question < ApplicationRecord
   validates :title, presence: true, length: { minimum: 5 }
 
   def solved
-    found_solution = false
-
     self.answers.each do |a|
       if a.accepted
-        found_solution = true
-        break
+        true
       end
     end
 
-    found_solution
+    false
   end
 end
