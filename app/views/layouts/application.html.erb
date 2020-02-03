@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>StackOverflow Clone</title>
+		<title>RailOverflow</title>
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
+
+    <%= favicon_link_tag('logo.png') %>
 
 		<!-- Fomantic UI -->
 		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.3/semantic.min.css'>
@@ -16,7 +18,7 @@
       <div class='ui attached stackable inverted menu'>
         <a class='header item' href='/'>
           <%= image_tag('logo.png', :alt => 'RailOverflow Logo') %>
-          StackOverflow Clone
+          RailOverflow
         </a>
         <%= link_to 'Questions', questions_path, class: 'item' %>
 

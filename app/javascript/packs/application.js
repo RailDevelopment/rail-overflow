@@ -9,7 +9,9 @@ require("@rails/activestorage").start();
 require("channels");
 const $ = require('jquery');
 
-$('#main').css('padding-bottom', `${$('#footer').outerHeight()}px`);
+$(document).on('ready turbolinks:load', function () {
+    $('#main').css('padding-bottom', `${$('#footer').outerHeight()}px`);
+});
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
