@@ -1,39 +1,39 @@
 <div class='ui vertical stripe segment'>
-    <div class='ui container'>
-        <div class='ui threaded comments'>
-            <h1 class='ui dividing header'>
-                <%= @question.title %>
-            </h1>
-            <div class='comment'>
-                <a class='avatar'>
-                    <img src='<%= @question.user.avatar %>'>
-                </a>
-                <div class='content'>
-                    <a class='author'><%= @question.user.username %></a>
-                    <div class='metadata'>
-                        <% if @question.solved %>
-                            <span class='solved' data-tooltip='This question has been solved.' data-inverted><i class='green checkmark icon'></i></span>
-                        <% end %>
-                        <span class='date'><%= time_ago_in_words(@question.created_at) %></span>
-                    </div>
-                    <div class='text'>
-                        <%= @question.text %>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class='ui comments'>
-            <h2 class='ui dividing header'>Answers</h2>
-            <%= render @question.answers %>
-
-            <h3 class='ui dividing header'>Add Your Answer:</h3>
-            <%= form_with(model: [ @question, @question.answers.build ], local: true, html: {class: 'ui reply form'}) do |form| %>
-                <div class='field'>
-                    <%= form.label :text %>
-                    <%= form.text_area :text %>
-                </div>
-                <%= form.submit 'Answer!', :class => 'ui blue submit button' %>
+  <div class='ui container'>
+    <div class='ui threaded comments'>
+      <h1 class='ui dividing header'>
+          <%= @question.title %>
+      </h1>
+      <div class='comment'>
+        <a class='avatar'>
+          <img src='<%= @question.user.avatar %>'>
+        </a>
+        <div class='content'>
+          <%= link_to @question.user.username, user_path(@question.user), class: 'author' %>
+          <div class='metadata'>
+            <% if @question.solved %>
+              <span class='solved' data-tooltip='This question has been solved.' data-inverted><i class='green checkmark icon'></i></span>
             <% end %>
+            <span class='date'><%= time_ago_in_words(@question.created_at) %></span>
+          </div>
+          <div class='text'>
+            <%= @question.text %>
+          </div>
         </div>
+      </div>
     </div>
+    <div class='ui comments'>
+      <h2 class='ui dividing header'>Answers</h2>
+      <%= render @question.answers %>
+
+      <h3 class='ui dividing header'>Add Your Answer:</h3>
+      <%= form_with(model: [ @question, @question.answers.build ], local: true, html: {class: 'ui reply form'}) do |form| %>
+        <div class='field'>
+          <%= form.label :text %>
+          <%= form.text_area :text %>
+        </div>
+        <%= form.submit 'Answer!', :class => 'ui blue submit button' %>
+      <% end %>
+    </div>
+  </div>
 </div>

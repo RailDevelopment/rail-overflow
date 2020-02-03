@@ -88,6 +88,8 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.4, Remote-rbenv: ruby-2.7.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, Remote-rbenv: ruby-2.7.0-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.2.2, Remote-rbenv: ruby-2.7.0-p0) [gem]" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="semantic" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

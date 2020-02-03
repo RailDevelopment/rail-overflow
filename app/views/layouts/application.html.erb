@@ -6,47 +6,78 @@
 		<%= csp_meta_tag %>
 
 		<!-- Fomantic UI -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.3/semantic.min.css">
+		<link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.3/semantic.min.css'>
 
 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 	</head>
 
 	<body>
-		<div class='ui attached stackable inverted menu'>
-			<a class='header item' href='/'>StackOverflow Clone</a>
-			<a class='item' href='/questions'>Questions</a>
-			
-			<div class='right menu'>
-				<div class='item'>
-					<div class='ui transparent inverted icon input'>
-						<i class='search icon'></i>
-						<input type='text' placeholder='search'>
-					</div>
-				</div>
-				<% if current_user %>
-					<div class='ui simple dropdown item'>
-						<%= current_user.username %>
-						<i class='dropdown icon'></i>
-						<div class='menu'>
-							<%= link_to 'Sign Out', signed_out_path, class: 'item' %>
-						</div>
-					</div>
-				<% else %>
-					<%= link_to 'Sign In', sign_in_path, class: 'item' %>
-					<%= link_to 'Sign Up', new_user_path, class: 'item' %>
-				<% end %>
-			</div>
-		</div>
+    <div id='main'>
+      <div class='ui attached stackable inverted menu'>
+        <a class='header item' href='/'>
+          <%= image_tag('logo.png', :alt => 'RailOverflow Logo') %>
+          StackOverflow Clone
+        </a>
+        <%= link_to 'Questions', questions_path, class: 'item' %>
 
-		<%= yield %>
+        <div class='right menu'>
+          <div class='item'>
+            <div class='ui transparent inverted icon input'>
+              <i class='search icon'></i>
+              <input type='text' placeholder='Search'>
+            </div>
+          </div>
+          <% if current_user %>
+            <div class='ui simple dropdown item'>
+              <%= current_user.username %>
+              <i class='dropdown icon'></i>
+              <div class='menu'>
+                <%= link_to 'My Profile', user_path(current_user), class: 'item' %>
+                <%= link_to 'Settings', account_settings_path, class: 'item' %>
+                <div class='ui divider'></div>
+                <%= link_to 'Sign Out', signed_out_path, class: 'item' %>
+              </div>
+            </div>
+          <% else %>
+            <%= link_to 'Sign In', sign_in_path, class: 'item' %>
+            <%= link_to 'Sign Up', new_user_path, class: 'item' %>
+          <% end %>
+        </div>
+      </div>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.3/semantic.min.js"></script>
+      <%= yield %>
+
+      <footer class='ui inverted vertical footer segment' id='footer'>
+        <div class='ui container'>
+          <div class='ui stackable inverted divided equal height stackable grid'>
+            <div class='three wide column'>
+              <h4 class='ui inverted header'>About</h4>
+              <div class='ui inverted link list'>
+                <%= link_to 'Credits', credits_path, class: 'item' %>
+              </div>
+            </div>
+            <div class='three wide column'>
+              <h4 class='ui inverted header'>Other Links</h4>
+              <div class='ui inverted link list'>
+                <a href='https://github.com/RailRunner166/rail-overflow' class='item'><i class='github icon'></i> GitHub</a>
+              </div>
+            </div>
+            <div class='seven wide column'>
+              <h4 class='ui inverted header'>RailOverflow</h4>
+              <p>A modern, self-hosted, open-source StackOverflow alternative that is completely free!</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.3/semantic.min.js'></script>
 		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 		<% if flash[:error] %>
 			<script type='text/javascript'>
-				$('body').toast({
+				$(document.body).toast({
 					title: 'Error',
 					message: '<%= flash[:error] %>',
 					showProgress: 'bottom',
@@ -58,7 +89,7 @@
 
 		<% if flash[:info] %>
 			<script type='text/javascript'>
-				$('body').toast({
+				$(document.body).toast({
 					message: '<%= flash[:info] %>',
 					showProgress: 'bottom',
 					class: 'grey',
@@ -66,5 +97,5 @@
 				});
 			</script>
 		<% end %>
-	</body>
+  </body>
 </html>

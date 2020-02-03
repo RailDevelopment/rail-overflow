@@ -14,10 +14,28 @@
  *= require_self
  */
 
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+
+#main {
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
 .masthead.segment {
     min-height: 700px;
-    padding: 1em 0em;
-    background: #28a !important;
+    padding: 1em 0;
 }
 
 .masthead .logo.item img {
@@ -30,7 +48,7 @@
 
 .masthead h1.ui.header {
     margin-top: 3em;
-    margin-bottom: 0em;
+    margin-bottom: 0;
     font-size: 4em;
     font-weight: normal;
 }
@@ -41,7 +59,7 @@
 }
 
 .ui.vertical.stripe {
-    padding: 8em 0em;
+    padding: 8em 0;
 }
 
 .ui.vertical.stripe h3 {
@@ -62,5 +80,32 @@
 }
 
 .ui.vertical.stripe .horizontal.divider {
-    margin: 3em 0em;
+    margin: 3em 0;
+}
+
+.ui.vertical.stripe.segment {
+    border: none;
+}
+
+.footer.segment {
+    padding: 5em 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+    .masthead.segment {
+        min-height: 350px;
+    }
+
+    .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+    }
+
+    .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+    }
 }

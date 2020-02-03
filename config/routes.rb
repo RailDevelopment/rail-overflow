@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/show'
   # Auth Routes
   get "sign_in" => "authentication#sign_in"
   get "signed_out" => "authentication#signed_out"
@@ -18,5 +17,6 @@ Rails.application.routes.draw do
     resources :answers
   end
 
+  get 'credits' => 'home#credits'
   root 'home#index'
 end

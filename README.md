@@ -1,5 +1,7 @@
 # RailOverflow
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/RailRunner166/rail-overflow/tree/master)
+
 RailOverflow (we're looking for a better name) is a self-hosted, open-source alternative to StackOverflow.
 
 ## Ruby version
@@ -37,7 +39,11 @@ $ RAILS_ENV=production rake db:migrate
 <!-- * Services (job queues, cache servers, search engines, etc.) -->
 
 ## Deployment instructions
-You can either run it on Heroku using the [`Procfile`](Procfile), or you can run it yourself, like this:
+
+### Heroku
+
+### Manual Deploy
+Run it yourself, like this:
 ```
 $ export PORT=3000 # can be any port you want, just make sure it is open and accessible to the user that will be running the application
 $ export MODE="production" # can also be "development" or "test"
@@ -48,3 +54,11 @@ $ bundle exec puma -t 5:5 -p $PORT -e $MODE
 > 
 > - The more threads you create, the faster your application will run, but it will also use more memory.
 > - Every system has a maximum amount of threads it can run at once. Be mindful of this as it will error if you somehow go over.
+
+## Credits and License
+### Credits:
+- The logo was made by **JustMrRobBoss#2020** on Discord, here is [his Discord server](https://discord.gg/XYX3WPn).
+
+### License:
+
+This application is licensed under the permissive [MIT license](LICENSE).
